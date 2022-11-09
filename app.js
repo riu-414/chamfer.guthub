@@ -6,59 +6,65 @@ let position = document.getElementById("position");
 let corner = document.getElementById("corner");
 let feed = document.getElementById("feed");
 
-let outputs = document.getElementById("outputs");
 let outputData = document.getElementById("outputData");
+let data1 = document.getElementById("data1");
 
 let btn = document.getElementById("btn");
 let reset = document.getElementById("reset");
 
+
+data1.innerHTML = "入力待ち・・・";
+
 btn.addEventListener("click", function () {
-
-  let stdPosition = (outerDiameter.value + 2.0);
-  let cutPosition = ((innerDiameter.value - 1.0) / 2);
-
   if (outerDiameter.value === "") {
-    noData(outputData);
+    noData(data1);
   } else if (innerDiameter.value === "") {
-    noData(outputData);
+    noData(data1);
   } else if (position.value === "") {
-    noData(outputData);
+    noData(data1);
   } else if (corner.value === "") {
-    noData(outputData);
+    noData(data1);
   } else if (feed.value === "") {
-    noData(outputData);
+    noData(data1);
   } else {
+    let cut6 = ((innerDiameter.value - 1.0) / 2);
+    let cut1 = Number(outerDiameter.value) + 2.0;
+    let cut2 = outerDiameter.value - ((0.5 + Number(corner.value)) * 2);
+    let cut3 = cut2 / 2;
+    let cut4 = Number(position.value) + cut6;
+    let cut5 = position.value - cut6;
     let newDatas = 
     [
-      "G0 X" + stdPosition + " Z" + position.value + " C0;",
-      "G1 X" + (outerDiameter.value - 1.2) + " F500;",
-      "Z" + position.value + " F" + feed.value + ";",
-      "G12.1",
-      "G16 C" + ((outerDiameter.value - 1.2) / 2) +";",
-      "G2 Z" + (position.value - cutPosition)  + " R" + cutPosition,
-      "G2 Z" + (position.value + cutPosition) + " R" + cutPosition,
+      "G0 X" + cut1.toFixed(1) + " Z" + position.value + " C0;",
+      "G1 X" + cut2.toFixed(1) + " F500;",
+      "Z" + cut5.toFixed(3) + " F" + feed.value + ";",
+      "G12.1" + ";",
+      "G16 C" + cut3.toFixed(1) +";",
+      "G2 Z" + cut4.toFixed(3)  + " R" + cut6.toFixed(1) + ";",
+      "G2 Z" + cut5.toFixed(3)+ " R" + cut6.toFixed(1) + ";",
       "Z" + position.value + ";",
       "G13.1;",
-      "G0 X" + stdPosition + " F1000;",
+      "G0 X" + cut1.toFixed(1) + " F1000;",
       "G18;"
     ];
-    createNcData(outputs, outputData, newDatas);
+    createNcData(outputData, data1, newDatas);
   };
-
 });
 
 reset.addEventListener("click", function() {
-  outputs.remove();
+  location.reload();
+  // outputData.remove();
 });
 
-function createNcData(outputs, oldText, newTexts) {
+function createNcData(outputData, oldText, newData) {
   oldText.innerHTML = "(MENTORI)";
   oldText.style.color = "black";
 
-  for(let i = 0; i < newTexts.length; i++) {
+  for(let i = 0; i < newData.length; i++) {
     let newText = document.createElement('p');
-    newText.textContent = newTexts[i];
-    outputs.appendChild(newText);
+    newText.textContent = newData[i];
+    outputData.appendChild(newText);
+    newText.setAttribute("id", "data1");
   }
 }
 
@@ -67,3 +73,8 @@ function noData(newText) {
   newText.style.color = "red";
 }
 
+document.onkeypress = function(e) {
+  if (e.key === 'Enter') {
+    return false;
+  }
+}

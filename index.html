@@ -13,7 +13,7 @@
 
   <header>
     <h1>G16を使った面取り</h1>
-    <p class="version">ver 1.0.0</p>
+    <p class="version">ver. 1.0.0</p>
   </header>
 
   <main>
@@ -22,27 +22,27 @@
 
       <form action method="post">
         <p>外径：</p>
-        <input type="number" id="outerDiameter" value="">
+        <input type="number" id="outerDiameter" value="9.0">
       </form>
 
       <form action method="post">
         <p>クロス穴径：</p>
-        <input type="number" id="innerDiameter" value="">
+        <input type="number" id="innerDiameter" value="4.0">
       </form>
 
       <form action method="post">
         <p>クロス穴位置：</p>
-        <input type="number" id="position" value="">
+        <input type="number" id="position" value="5.0">
       </form>
 
       <form action method="post">
         <p>面の大きさ：</p>
-        <input type="number" id="corner" value="">
+        <input type="number" id="corner" value="0.1">
       </form>
 
       <form action method="post">
         <p>送り：</p>
-        <input type="number" id="feed" value="">
+        <input type="number" id="feed" value="100">
       </form>
 
       <p class="btn" id="btn">入力完了</p>
@@ -52,10 +52,17 @@
     <section class="output">
       <h2>NC データ</h2>
 
-      <div id="outputs">
-        <p id="outputData">入力待ち・・・</p>
+      <div id="outputData">
+        <p id="data1"></p>
       </div>
 
+    </section>
+
+    <section class="news">
+      <p>新着情報：</p>
+      <ul>
+        <li>2022-11-08 リリース(ver. 1.0.0)</li>
+      </ul>
     </section>
   </main>
 

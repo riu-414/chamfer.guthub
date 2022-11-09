@@ -102,7 +102,6 @@ form>p {
 }
 
 .output>div {
-  margin-top: 16px;
   margin-left: auto;
   margin-right: auto;
   width: calc(100% - 64px);
@@ -114,6 +113,18 @@ form>p {
 
 .output>div>p {
   margin: 0 0 0 16px;
+}
+
+.news {
+  font-size: 12px;
+}
+
+.news>p {
+ margin: 20px 0 0 20px;
+}
+
+.news>ul {
+  margin: 0;
 }
 
 /* footer */
