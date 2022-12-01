@@ -7,6 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="origin-trial" content="TOKEN_GOES_HERE">
   <title>G16を使った面取り</title>
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.0.5/remodal.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.0.5/remodal-default-theme.min.css">
+
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,7 +19,7 @@
 
   <header>
     <h1>G16を使った面取り</h1>
-    <p class="version">ver. 1.0.0</p>
+    <p class="version">ver. 1.1.0</p>
   </header>
 
   <main>
@@ -23,31 +28,32 @@
 
       <form action method="post">
         <p>外径：</p>
-        <input type="number" id="outerDiameter" value="9.0">
+        <input type="number" id="outerDiameter" placeholder="例: 9.0">
       </form>
 
       <form action method="post">
         <p>クロス穴径：</p>
-        <input type="number" id="innerDiameter" value="4.0">
+        <input type="number" id="innerDiameter" placeholder="例: 4.0">
       </form>
 
       <form action method="post">
         <p>クロス穴位置：</p>
-        <input type="number" id="position" value="5.0">
+        <input type="number" id="position" placeholder="例: 5.0">
       </form>
 
       <form action method="post">
         <p>面の大きさ：</p>
-        <input type="number" id="corner" value="0.1">
+        <input type="number" id="corner" placeholder="例: 0.1">
       </form>
 
       <form action method="post">
         <p>送り：</p>
-        <input type="number" id="feed" value="100">
+        <input type="number" id="feed" placeholder="例: 100">
       </form>
 
       <p class="btn" id="btn">入力完了</p>
       <p class="reset" id="reset">リセット</p>
+      
     </section>
 
     <section class="output">
@@ -62,6 +68,13 @@
     <section class="news">
       <p>新着情報：</p>
       <ul>
+        <li>2022-12-01 <a href="#modal" class="document">参考資料</a>の追加(ver. 1.1.0)</li>
+        <!-- <a href="#modal" class="document">参考資料</a> -->
+        <div class="remodal" data-remodal-id="modal">
+          <button data-remodal-action="close" class="remodal-close"></button>
+          <img src="images/memo.jpg" alt="技術メモ">
+        </div>
+
         <li>2022-11-08 リリース(ver. 1.0.0)</li>
       </ul>
     </section>
@@ -70,6 +83,11 @@
   <footer>
     <p>© 2022 Yuya Osugi</p>
   </footer>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.0.5/remodal.min.js"></script>
 
   <script src="app.js"></script>
 
