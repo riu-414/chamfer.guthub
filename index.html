@@ -19,7 +19,7 @@
 
   <header>
     <h1>G16を使った面取り</h1>
-    <p class="version">ver. 1.1.0</p>
+    <p class="version">ver. 1.1.1</p>
   </header>
 
   <main>
@@ -61,6 +61,17 @@
 
       <div id="outputData">
         <p id="data1"></p>
+        <p id="data2"></p>
+        <p id="data3"></p>
+        <p id="data4"></p>
+        <p id="data5"></p>
+        <p id="data6"></p>
+        <p id="data7"></p>
+        <p id="data8"></p>
+        <p id="data9"></p>
+        <p id="data10"></p>
+        <p id="data11"></p>
+        <p id="data12"></p>
       </div>
 
     </section>
@@ -68,14 +79,21 @@
     <section class="news">
       <p>新着情報：</p>
       <ul>
-        <li>2022-12-01 <a href="#modal" class="document">参考資料</a>の追加(ver. 1.1.0)</li>
+        <li>2022-12-09 バグ修正-<a href="#modal-2" class="document">内容</a> (ver. 1.1.1)</li>
+        <div class="remodal" data-remodal-id="modal-2">
+          <button data-remodal-action="close" class="remodal-close"></button>
+          <img src="images/bug.jpg" alt="" width="300px">
+          <p>入力完了ボタンを複数回押したとき、古いNCデータの後に新しいNCデータが続けて出力されていた</p>
+        </div>
+
+        <li>2022-12-01 <a href="#modal-1" class="document">参考資料</a>の追加 (ver. 1.1.0)</li>
         <!-- <a href="#modal" class="document">参考資料</a> -->
-        <div class="remodal" data-remodal-id="modal">
+        <div class="remodal" data-remodal-id="modal-1">
           <button data-remodal-action="close" class="remodal-close"></button>
           <img src="images/memo.jpg" alt="技術メモ">
         </div>
 
-        <li>2022-11-08 リリース(ver. 1.0.0)</li>
+        <li>2022-11-08 リリース (ver. 1.0.0)</li>
       </ul>
     </section>
   </main>
